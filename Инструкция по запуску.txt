@@ -1,0 +1,24 @@
+1. Откройте терминал (Command Prompt, PowerShell, Terminal на MacOS или Linux).
+
+2. Используйте команду cd, чтобы перейти в директорию, где находятся ваши файлы.
+
+3. Используйте следующиую команду для запуска программы:
+
+python main.py --transactions transaction1 transaction2 transaction3 transaction4 --prev-block-hash prev_block_hash
+--transactions – список файлов с транзакциями. Здесь вы указываете все файлы, которые содержат транзакции для текущего блока.
+--prev-block-hash – файл с хэшем предыдущего блока.
+
+Примеры:
+
+python main.py --transactions ../files/transaction1.txt ../files/transaction2.txt ../files/transaction3.txt ../files/transaction4.txt --prev-block-hash ../files/prev_block_hash.txt
+
+python main.py --transactions ../files/transaction1.pdf ../files/transaction2.pdf ../files/transaction3.pdf ../files/transaction4.pdf --prev-block-hash ../files/prev_block_hash.txt
+
+python main.py --transactions ../files/transaction1.jpg ../files/transaction2.jpg ../files/transaction3.jpg ../files/transaction4.jpg --prev-block-hash ../files/prev_block_hash.txt
+
+4. Содержимое файлов:
+– prev_block_hash – например:
+3d2e0a9e7f3b2a4a8e6f20b9678b423f1f2b4b7e3b5d6f7898e1b5c3d1e4a3c2
+– transaction1, transaction2, transaction3, transaction4: любые файлы по 226 байт.
+
+5. После успешного запуска программы вы должны увидеть сообщение о завершении майнинга, включая хэш нового блока и найденное значение nonce. Также будет создан файл mined_block.bin, содержащий заголовок нового блока.
